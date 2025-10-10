@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thirumalai Portfolio | About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+.about-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.resume-box {
+  max-width: 650px;
+  margin: auto;
+  padding: 20px; /* Restore padding */
+}
+
+
+
+    body {
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+      padding-top: 60px;
+      color: #333;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #2c3e50;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: left;
+      padding: 10px 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+    section {
+      margin: 80px 20px 40px 20px;
+    }
+    h2 {
+      font-size: 28px;
+      color: #2c3e50;
+      border-left: 5px solid #3498db;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+    .box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .box {
+  text-align: left; /* align content inside box to left */
+}
+.box a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+    .about-photo img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .about-photo img:hover {
+      transform: scale(1.05);
+    }
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    ul li {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">My Portfolio</div>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="box about-container">
+      <div class="about-text">
+        <p>I am a final-year CSE student with a passion for building software solutions using modern technologies. I’m a passionate Computer Science Engineering student with a strong interest in software development, artificial intelligence, and emerging technologies.</p>
+        <p>I enjoy turning ideas into real-time applications and constantly strive to improve my coding and problem-solving skills. Currently, I’m expanding my knowledge in cloud computing, IoT, and machine learning, while also working on projects that combine both technical depth and creativity.</p>
+        <ul>
+          <li>📍 Location: Erode</li>
+          <li>🎓 College: Erode Sengunthar Engineering College</li>
+          <li>📧 Email: thirumalaivasan2607@gmail.com</li>
+        </ul>
+      </div>
+      <div class="about-photo">
+        <img src="photo.jpg" alt="MyPhoto">
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
