@@ -1,167 +1,915 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thirumalai Portfolio | About</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thirumalai Portfolio | About</title>
+
+<!-- Google Font -->
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<style>
+
+    /* ================= GLOBAL ================= */
+
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-.about-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
 
-.box {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
-
-.resume-box {
-  max-width: 650px;
-  margin: auto;
-  padding: 20px; /* Restore padding */
-}
-
-
+    html {
+        scroll-behavior: smooth;
+    }
 
     body {
-      background: linear-gradient(to right, #ece9e6, #ffffff);
-      padding-top: 60px;
-      color: #333;
+        font-family: 'Inter', sans-serif;
+        background: #080b14;
+        color: #ffffff;
+        min-height: 100vh;
+        overflow-x: hidden;
     }
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #2c3e50;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: left;
-      padding: 10px 30px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-    }
-    nav .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #f39c12;
-    }
-    section {
-      margin: 80px 20px 40px 20px;
-    }
-    h2 {
-      font-size: 28px;
-      color: #2c3e50;
-      border-left: 5px solid #3498db;
-      padding-left: 10px;
-      margin-bottom: 20px;
-    }
-    .box {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
-    .about-container {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-    .box {
-  text-align: left; /* align content inside box to left */
-}
-.box a {
-  display: block;
-  text-align: center;
-  margin-top: 20px;
-}
 
-    .about-photo img {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-      cursor: pointer;
+    /* ================= BACKGROUND GLOW ================= */
+
+    body::before {
+        content: "";
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        background: #2563eb;
+        filter: blur(180px);
+        opacity: 0.17;
+        top: -180px;
+        left: -150px;
+        z-index: -2;
     }
-    .about-photo img:hover {
-      transform: scale(1.05);
+
+    body::after {
+        content: "";
+        position: fixed;
+        width: 450px;
+        height: 450px;
+        background: #7c3aed;
+        filter: blur(180px);
+        opacity: 0.15;
+        bottom: -150px;
+        right: -120px;
+        z-index: -2;
     }
+
+    /* ================= NAVBAR ================= */
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 75px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 7%;
+
+        background: rgba(8, 11, 20, 0.75);
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        z-index: 1000;
+    }
+
+    nav .logo {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #ffffff;
+    }
+
+    nav .logo span {
+        color: #60a5fa;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+    }
+
+    nav ul li a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        position: relative;
+        transition: 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #60a5fa;
+    }
+
+    nav ul li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -7px;
+        width: 0;
+        height: 2px;
+        background: #60a5fa;
+        transition: 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    /* ================= MAIN SECTION ================= */
+
+    section {
+        max-width: 1150px;
+        margin: 0 auto;
+        padding: 125px 7% 70px;
+    }
+
+    /* ================= HEADING ================= */
+
+    h2 {
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 800;
+        letter-spacing: -1px;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+    }
+
+    h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 65px;
+        height: 4px;
+        border-radius: 10px;
+
+        background: linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+    }
+
+    /* ================= MAIN ABOUT CARD ================= */
+
+    .about-card {
+        position: relative;
+
+        display: grid;
+
+        grid-template-columns: 1.55fr 0.75fr;
+
+        gap: 45px;
+
+        padding: 42px;
+
+        background: rgba(255, 255, 255, 0.045);
+
+        border: 1px solid rgba(255, 255, 255, 0.10);
+
+        border-radius: 24px;
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        box-shadow:
+            0 25px 60px rgba(0, 0, 0, 0.25);
+
+        overflow: hidden;
+
+        animation: fadeUp 0.8s ease forwards;
+
+        transition: 0.35s ease;
+    }
+
+    .about-card::before {
+        content: "";
+
+        position: absolute;
+
+        width: 180px;
+        height: 180px;
+
+        top: -100px;
+        right: -80px;
+
+        background: linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+        filter: blur(70px);
+
+        opacity: 0.18;
+
+        pointer-events: none;
+    }
+
+    .about-card:hover {
+        transform: translateY(-6px);
+
+        border-color: rgba(96, 165, 250, 0.30);
+
+        box-shadow:
+            0 35px 75px rgba(0, 0, 0, 0.38),
+            0 0 35px rgba(37, 99, 235, 0.08);
+    }
+
+    /* ================= LEFT CONTENT ================= */
+
     .about-text {
-      flex: 1;
-      min-width: 280px;
+        position: relative;
+        z-index: 2;
     }
-    ul li {
-      margin-left: 20px;
+
+    .about-label {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        margin-bottom: 20px;
+
+        color: #60a5fa;
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        letter-spacing: 1.5px;
+
+        text-transform: uppercase;
     }
-  </style>
+
+    .about-label::before {
+        content: "";
+
+        width: 24px;
+        height: 2px;
+
+        background: linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+        border-radius: 10px;
+    }
+
+    .about-text p {
+        color: #94a3b8;
+
+        font-size: 15px;
+
+        line-height: 1.85;
+
+        margin-bottom: 20px;
+    }
+
+    .about-text p:first-of-type {
+        color: #cbd5e1;
+    }
+
+    .highlight {
+        color: #e2e8f0;
+        font-weight: 600;
+    }
+
+    /* ================= RIGHT PROFILE PANEL ================= */
+
+    .profile-panel {
+        position: relative;
+
+        z-index: 2;
+
+        padding: 25px;
+
+        border-radius: 18px;
+
+        background: rgba(255, 255, 255, 0.035);
+
+        border: 1px solid rgba(255, 255, 255, 0.09);
+
+        height: fit-content;
+
+        transition: 0.35s ease;
+    }
+
+    .profile-panel:hover {
+        transform: translateY(-5px);
+
+        border-color: rgba(96, 165, 250, 0.28);
+
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .profile-panel h3 {
+        font-size: 19px;
+
+        margin-bottom: 22px;
+
+        color: #f8fafc;
+    }
+
+    /* ================= PROFILE ITEMS ================= */
+
+    .profile-item {
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding: 13px 12px;
+
+        margin-bottom: 10px;
+
+        background: rgba(255, 255, 255, 0.035);
+
+        border: 1px solid rgba(255, 255, 255, 0.06);
+
+        border-radius: 10px;
+
+        transition: 0.3s ease;
+    }
+
+    .profile-item:hover {
+        transform: translateX(5px);
+
+        background: rgba(96, 165, 250, 0.07);
+
+        border-color: rgba(96, 165, 250, 0.18);
+    }
+
+    .profile-icon {
+        width: 38px;
+        height: 38px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 10px;
+
+        background: rgba(37, 99, 235, 0.12);
+
+        border: 1px solid rgba(96, 165, 250, 0.12);
+
+        font-size: 17px;
+    }
+
+    .profile-info span {
+        display: block;
+
+        color: #64748b;
+
+        font-size: 11px;
+
+        margin-bottom: 3px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.8px;
+    }
+
+    .profile-info strong {
+        color: #cbd5e1;
+
+        font-size: 13px;
+
+        font-weight: 600;
+    }
+
+    /* ================= FOCUS SECTION ================= */
+
+    .focus-section {
+        margin-top: 28px;
+
+        position: relative;
+
+        z-index: 2;
+    }
+
+    .focus-title {
+        color: #cbd5e1;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        margin-bottom: 12px;
+    }
+
+    .focus-list {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 9px;
+    }
+
+    .focus-tag {
+        padding: 8px 12px;
+
+        border-radius: 8px;
+
+        color: #cbd5e1;
+
+        font-size: 12px;
+
+        background: rgba(255, 255, 255, 0.035);
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        transition: 0.3s ease;
+    }
+
+    .focus-tag:hover {
+        color: #ffffff;
+
+        border-color: rgba(96, 165, 250, 0.30);
+
+        background: rgba(96, 165, 250, 0.07);
+
+        transform: translateY(-3px);
+    }
+
+    /* ================= DETAILS STRIP ================= */
+
+    .details-strip {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 15px;
+
+        margin-top: 25px;
+
+        animation: fadeUp 1s ease forwards;
+    }
+
+    .detail-card {
+        padding: 18px;
+
+        border-radius: 14px;
+
+        background: rgba(255, 255, 255, 0.035);
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        transition: 0.3s ease;
+    }
+
+    .detail-card:hover {
+        transform: translateY(-5px);
+
+        border-color: rgba(96, 165, 250, 0.25);
+
+        background: rgba(96, 165, 250, 0.05);
+    }
+
+    .detail-icon {
+        font-size: 18px;
+
+        margin-bottom: 8px;
+    }
+
+    .detail-card span {
+        display: block;
+
+        color: #64748b;
+
+        font-size: 11px;
+
+        margin-bottom: 4px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.8px;
+    }
+
+    .detail-card strong {
+        color: #cbd5e1;
+
+        font-size: 13px;
+
+        font-weight: 600;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    @keyframes fadeUp {
+
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+    /* ================= TABLET ================= */
+
+    @media (max-width: 900px) {
+
+        nav {
+            padding: 0 5%;
+        }
+
+        nav ul {
+            gap: 15px;
+        }
+
+        section {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .about-card {
+            grid-template-columns: 1fr;
+
+            gap: 30px;
+
+            padding: 35px;
+        }
+
+        .details-strip {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 650px) {
+
+        nav {
+            height: auto;
+
+            padding: 15px 5%;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 12px;
+        }
+
+        section {
+            padding-top: 150px;
+
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        h2 {
+            font-size: 34px;
+
+            margin-bottom: 32px;
+        }
+
+        .about-card {
+            padding: 25px 20px;
+
+            border-radius: 18px;
+        }
+
+        .about-text p {
+            font-size: 14px;
+
+            line-height: 1.75;
+        }
+
+        .profile-panel {
+            padding: 20px;
+        }
+
+        .details-strip {
+            gap: 10px;
+        }
+
+        .detail-card {
+            padding: 15px;
+        }
+
+    }
+
+</style>
+
 </head>
+
 <body>
 
-  <nav>
-    <div class="logo">My Portfolio</div>
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<!-- ================= NAVBAR ================= -->
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="box about-container">
-      <div class="about-text">
-        <p>I am a final-year CSE student with a passion for building software solutions using modern technologies. I’m a passionate Computer Science Engineering student with a strong interest in software development, artificial intelligence, and emerging technologies.</p>
-        <p>I enjoy turning ideas into real-time applications and constantly strive to improve my coding and problem-solving skills. Currently, I’m expanding my knowledge in cloud computing, IoT, and machine learning, while also working on projects that combine both technical depth and creativity.</p>
-        <ul>
-          <li>📍 Location: Erode</li>
-          <li>🎓 College: Erode Sengunthar Engineering College</li>
-          <li>📧 Email: thirumalaivasan2607@gmail.com</li>
-        </ul>
-      </div>
-      <div class="about-photo">
-        <img src="photo.jpg" alt="MyPhoto">
-      </div>
+<nav>
+
+
+<div class="logo">
+    THIRUMALAI<span>.</span>
+</div>
+
+<ul>
+
+    <li>
+        <a href="home.html">Home</a>
+    </li>
+
+    <!-- ABOUT LINK ADDED -->
+    <li>
+        <a href="about.html">About</a>
+    </li>
+
+    <li>
+        <a href="resume.html">Resume</a>
+    </li>
+
+    <li>
+        <a href="projects.html">Projects</a>
+    </li>
+
+    <li>
+        <a href="certifications.html">Certifications</a>
+    </li>
+
+    <li>
+        <a href="skills.html">Skills</a>
+    </li>
+
+    <li>
+        <a href="contact.html">Contact</a>
+    </li>
+
+</ul>
+
+
+</nav>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+
+<h2>About Me</h2>
+
+<!-- MAIN ABOUT CARD -->
+
+<div class="about-card">
+
+    <!-- LEFT SIDE -->
+
+    <div class="about-text">
+
+        <div class="about-label">
+            Who I Am
+        </div>
+
+        <p>
+            I am a Computer Science Engineering graduate passionate about
+            building practical, scalable, and user-focused software solutions.
+            My primary focus is <span class="highlight">Python Full Stack Development</span>,
+            with a strong foundation in programming, web technologies,
+            databases, and application development.
+        </p>
+
+        <p>
+            I enjoy transforming ideas into functional applications and
+            continuously improving my programming, problem-solving, and
+            software development skills. I have hands-on experience working
+            with Python, Streamlit, SQL, HTML, CSS, JavaScript, and
+            machine learning techniques through academic and personal projects.
+        </p>
+
+        <p>
+            Along with full-stack development, I am interested in integrating
+            <span class="highlight">Artificial Intelligence</span> into practical
+            software applications. My goal is to build reliable Python-based
+            applications that combine clean development practices with
+            intelligent features, automation, and real-world problem solving.
+        </p>
+
+        <!-- CURRENT FOCUS -->
+
+        <div class="focus-section">
+
+            <div class="focus-title">
+                Currently Focused On
+            </div>
+
+            <div class="focus-list">
+
+                <div class="focus-tag">
+                    🐍 Python Development
+                </div>
+
+                <div class="focus-tag">
+                    🌐 Full Stack Applications
+                </div>
+
+                <div class="focus-tag">
+                    🤖 AI Integration
+                </div>
+
+                <div class="focus-tag">
+                    🗄️ SQL & Databases
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-  </section>
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="profile-panel">
+
+        <h3>
+            Developer Profile
+        </h3>
+
+        <div class="profile-item">
+
+            <div class="profile-icon">
+                🎓
+            </div>
+
+            <div class="profile-info">
+
+                <span>
+                    Education
+                </span>
+
+                <strong>
+                    B.E. Computer Science
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-item">
+
+            <div class="profile-icon">
+                💻
+            </div>
+
+            <div class="profile-info">
+
+                <span>
+                    Primary Focus
+                </span>
+
+                <strong>
+                    Python Full Stack
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-item">
+
+            <div class="profile-icon">
+                🤖
+            </div>
+
+            <div class="profile-info">
+
+                <span>
+                    Interest
+                </span>
+
+                <strong>
+                    AI Integration
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-item">
+
+            <div class="profile-icon">
+                📍
+            </div>
+
+            <div class="profile-info">
+
+                <span>
+                    Location
+                </span>
+
+                <strong>
+                    Erode, Tamil Nadu
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= DETAILS ================= -->
+
+<div class="details-strip">
+
+    <div class="detail-card">
+
+        <div class="detail-icon">
+            🐍
+        </div>
+
+        <span>
+            Development
+        </span>
+
+        <strong>
+            Python & Web
+        </strong>
+
+    </div>
+
+
+    <div class="detail-card">
+
+        <div class="detail-icon">
+            🛠️
+        </div>
+
+        <span>
+            Technologies
+        </span>
+
+        <strong>
+            HTML • CSS • JS • SQL
+        </strong>
+
+    </div>
+
+
+    <div class="detail-card">
+
+        <div class="detail-icon">
+            📧
+        </div>
+
+        <span>
+            Email
+        </span>
+
+        <strong>
+            thirumalaivasan2607@gmail.com
+        </strong>
+
+    </div>
+
+</div>
+
+
+</section>
 
 </body>
+
 </html>
