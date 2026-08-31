@@ -1,125 +1,839 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thirumalai Portfolio | Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <style>
-    /* Same styles for consistency */
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thirumalai Portfolio | Projects</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<style>
+
+    /* ================= GLOBAL ================= */
+
     * {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
-      background: linear-gradient(to right, #ece9e6, #ffffff);
-      background-image: radial-gradient(circle at top left, rgba(255, 200, 200, 0.2), transparent),
-                        radial-gradient(circle at bottom right, rgba(200, 200, 255, 0.2), transparent);
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: #333;
-      padding-top: 60px;
-      line-height: 1.6;
+        font-family: 'Inter', sans-serif;
+        background: #080b14;
+        color: #ffffff;
+        min-height: 100vh;
+        overflow-x: hidden;
+        line-height: 1.6;
     }
+
+    /* ================= BACKGROUND GLOW ================= */
+
+    body::before {
+        content: "";
+        position: fixed;
+
+        width: 500px;
+        height: 500px;
+
+        background: #2563eb;
+
+        filter: blur(180px);
+        opacity: 0.17;
+
+        top: -180px;
+        left: -150px;
+
+        z-index: -2;
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+
+        width: 450px;
+        height: 450px;
+
+        background: #7c3aed;
+
+        filter: blur(180px);
+        opacity: 0.15;
+
+        bottom: -150px;
+        right: -120px;
+
+        z-index: -2;
+    }
+
+    /* ================= NAVBAR ================= */
+
     nav {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      background-color: #2c3e50;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 1000;
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 75px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 7%;
+
+        background: rgba(8, 11, 20, 0.75);
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        z-index: 1000;
     }
+
     nav .logo {
-      font-size: 22px;
-      font-weight: bold;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #ffffff;
     }
+
+    nav .logo span {
+        color: #60a5fa;
+    }
+
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
+        list-style: none;
+
+        display: flex;
+
+        gap: 30px;
     }
+
     nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+        color: #cbd5e1;
+
+        text-decoration: none;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        position: relative;
+
+        transition: 0.3s ease;
     }
+
     nav ul li a:hover {
-      color: #f39c12;
+        color: #60a5fa;
     }
+
+    nav ul li a::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -7px;
+
+        width: 0;
+        height: 2px;
+
+        background: #60a5fa;
+
+        transition: 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    /* ================= PROJECT SECTION ================= */
+
     section {
-      margin: 60px 20px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+        max-width: 1150px;
+
+        margin: 0 auto;
+
+        padding: 125px 7% 80px;
     }
+
+    /* ================= HEADING ================= */
+
     h2 {
-      font-size: 28px;
-      border-left: 5px solid #3498db;
-      padding-left: 10px;
-      color: #2c3e50;
-      margin-bottom: 20px;
+        font-size: clamp(32px, 5vw, 48px);
+
+        font-weight: 800;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 15px;
+
+        position: relative;
+
+        display: inline-block;
     }
+
+    h2::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -10px;
+
+        width: 65px;
+        height: 4px;
+
+        border-radius: 10px;
+
+        background: linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+    }
+
+    /* ================= PROJECT INTRO ================= */
+
+    .project-intro {
+        max-width: 720px;
+
+        color: #94a3b8;
+
+        font-size: 15px;
+
+        line-height: 1.8;
+
+        margin-bottom: 35px;
+
+        animation: fadeUp 0.7s ease forwards;
+    }
+
+    .project-intro span {
+        color: #60a5fa;
+
+        font-weight: 600;
+    }
+
+    /* ================= PROJECT GRID ================= */
+
+    #projects {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+    #projects h2,
+    .project-intro {
+        grid-column: 1 / -1;
+    }
+
+    /* ================= PROJECT CARD ================= */
+
     .box {
-      background: rgba(255,255,255,0.95);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+
+        background: rgba(255, 255, 255, 0.045);
+
+        border: 1px solid rgba(255, 255, 255, 0.10);
+
+        padding: 30px;
+
+        border-radius: 20px;
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        box-shadow:
+            0 20px 50px rgba(0, 0, 0, 0.25);
+
+        transition: 0.35s ease;
+
+        overflow: hidden;
+
+        animation: fadeUp 0.7s ease forwards;
     }
+
+    /* Top gradient line */
+
+    .box::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 3px;
+
+        background: linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+        transform: scaleX(0);
+
+        transform-origin: left;
+
+        transition: 0.35s ease;
+    }
+
+    .box:hover::before {
+        transform: scaleX(1);
+    }
+
     .box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        transform: translateY(-8px);
+
+        border-color: rgba(96, 165, 250, 0.35);
+
+        box-shadow:
+            0 25px 60px rgba(0, 0, 0, 0.4),
+            0 0 25px rgba(37, 99, 235, 0.08);
     }
+
+    /* ================= PROJECT CATEGORY ================= */
+
+    .project-category {
+        display: inline-block;
+
+        margin-bottom: 15px;
+
+        padding: 5px 10px;
+
+        border-radius: 20px;
+
+        background: rgba(96, 165, 250, 0.07);
+
+        border: 1px solid rgba(96, 165, 250, 0.15);
+
+        color: #60a5fa;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+
+        text-transform: uppercase;
+    }
+
+    /* ================= PROJECT NUMBER ================= */
+
+    .project-number {
+        position: absolute;
+
+        top: 25px;
+        right: 25px;
+
+        display: flex;
+
+        width: 38px;
+        height: 38px;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 10px;
+
+        background: rgba(37, 99, 235, 0.12);
+
+        border: 1px solid rgba(96, 165, 250, 0.20);
+
+        color: #60a5fa;
+
+        font-size: 13px;
+
+        font-weight: 800;
+    }
+
+    /* ================= PROJECT TITLE ================= */
+
     h3 {
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #2c3e50;
+        color: #f8fafc;
+
+        font-size: 20px;
+
+        line-height: 1.4;
+
+        font-weight: 700;
+
+        margin-bottom: 14px;
+
+        padding-right: 45px;
     }
-    a {
-      color: #3498db;
-      text-decoration: none;
+
+    /* ================= DESCRIPTION ================= */
+
+    .box p {
+        color: #94a3b8;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+
+        margin-bottom: 20px;
     }
-    a:hover {
-      text-decoration: underline;
+
+    /* ================= TECHNOLOGY TAGS ================= */
+
+    .tech-stack {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        margin-bottom: 25px;
     }
-  </style>
+
+    .tech {
+        padding: 5px 10px;
+
+        border-radius: 6px;
+
+        background: rgba(255, 255, 255, 0.035);
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        color: #cbd5e1;
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        transition: 0.3s ease;
+    }
+
+    .tech:hover {
+        border-color: rgba(96, 165, 250, 0.30);
+
+        color: #60a5fa;
+
+        background: rgba(96, 165, 250, 0.05);
+    }
+
+    /* ================= GITHUB LINK ================= */
+
+    .github-link {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+        color: #60a5fa;
+
+        text-decoration: none;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        padding: 10px 16px;
+
+        border: 1px solid rgba(96, 165, 250, 0.20);
+
+        border-radius: 8px;
+
+        background: rgba(96, 165, 250, 0.05);
+
+        transition: 0.3s ease;
+    }
+
+    .github-link:hover {
+        color: #ffffff;
+
+        background: linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+        border-color: transparent;
+
+        transform: translateY(-2px);
+    }
+
+    /* ================= FEATURED PROJECT ================= */
+
+    .featured-project {
+        grid-column: 1 / -1;
+
+        border-color: rgba(96, 165, 250, 0.18);
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(37, 99, 235, 0.055),
+                rgba(124, 58, 237, 0.045)
+            ),
+            rgba(255, 255, 255, 0.045);
+    }
+
+    .featured-project h3 {
+        font-size: 22px;
+    }
+
+    .featured-label {
+        position: absolute;
+
+        top: 25px;
+        right: 78px;
+
+        color: #a5b4fc;
+
+        font-size: 10px;
+
+        font-weight: 800;
+
+        letter-spacing: 1px;
+
+        text-transform: uppercase;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    @keyframes fadeUp {
+
+        from {
+            opacity: 0;
+
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+    }
+
+    /* ================= TABLET ================= */
+
+    @media (max-width: 900px) {
+
+        nav {
+            padding: 0 5%;
+        }
+
+        nav ul {
+            gap: 15px;
+        }
+
+        section {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 650px) {
+
+        nav {
+            height: auto;
+
+            padding: 15px 5%;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 12px;
+        }
+
+        section {
+            padding-top: 150px;
+
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        #projects {
+            grid-template-columns: 1fr;
+        }
+
+        #projects h2,
+        .project-intro {
+            grid-column: auto;
+        }
+
+        .box,
+        .featured-project {
+            grid-column: auto;
+        }
+
+        .box {
+            padding: 25px;
+        }
+
+        h2 {
+            font-size: 34px;
+
+            margin-bottom: 15px;
+        }
+
+        .project-intro {
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+        h3,
+        .featured-project h3 {
+            font-size: 18px;
+
+            padding-right: 40px;
+        }
+
+        .box p {
+            font-size: 13px;
+        }
+
+        .project-number {
+            top: 20px;
+            right: 20px;
+        }
+
+        .featured-label {
+            display: none;
+        }
+
+    }
+
+</style>
+
+
 </head>
+
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
 <nav>
-  <div class="logo">My Portfolio</div>
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+
+
+<div class="logo">
+    THIRUMALAI<span>.</span>
+</div>
+
+<ul>
+
+    <li>
+        <a href="home.html">Home</a>
+    </li>
+
+    <li>
+        <a href="about.html">About</a>
+    </li>
+
+    <li>
+        <a href="resume.html">Resume</a>
+    </li>
+
+    <li>
+        <a href="projects.html">Projects</a>
+    </li>
+
+    <li>
+        <a href="certifications.html">Certifications</a>
+    </li>
+
+    <li>
+        <a href="skills.html">Skills</a>
+    </li>
+
+    <li>
+        <a href="contact.html">Contact</a>
+    </li>
+
+</ul>
+
+
 </nav>
 
+<!-- ================= PROJECTS ================= -->
+
 <section id="projects">
-  <h2>Projects</h2>
-  <div class="box">
-    <h3>Bank Employee Management System</h3>
-    <p>A Java-based desktop application to manage employee records in a bank.</p>
-    <a href="https://github.com/Thirumalai260720/project-01/tree/main/BANK" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-  </div>
-  <div class="box">
-    <h3>Automated Mental Health Identification</h3>
-    <p>AI-based tool to analyze text input and suggest mental health status.</p>
-    <a href="https://github.com/Thirumalai260720/Automated-Mental-Health-Identification" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-  </div>
+
+
+<h2>Projects</h2>
+
+
+<p class="project-intro">
+    A selection of projects showcasing my experience in
+    <span>Python, Java, web development, databases, and AI-based applications.</span>
+    Each project reflects my approach to solving practical problems
+    through software development.
+</p>
+
+
+<!-- PROJECT 01 -->
+
+<div class="box">
+
+    <div class="project-number">
+        01
+    </div>
+
+    <div class="project-category">
+        Java • Desktop Application
+    </div>
+
+    <h3>
+        Bank Employee Management System
+    </h3>
+
+    <p>
+        A Java-based desktop application designed to manage
+        employee records in a bank with a focus on structured
+        data management and CRUD operations.
+    </p>
+
+    <div class="tech-stack">
+
+        <span class="tech">Java</span>
+        <span class="tech">MySQL</span>
+        <span class="tech">CRUD</span>
+        <span class="tech">OOP</span>
+
+    </div>
+
+    <a
+        href="https://github.com/Thirumalai260720/project-01/tree/main/BANK"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="github-link">
+
+        GitHub → 
+
+    </a>
+
+</div>
+
+
+<!-- PROJECT 02 -->
+
+<div class="box">
+
+    <div class="project-number">
+        02
+    </div>
+
+    <div class="project-category">
+        AI • Machine Learning
+    </div>
+
+    <h3>
+        Automated Mental Health Identification
+    </h3>
+
+    <p>
+        An AI-based application that analyzes text input and
+        provides an automated indication of potential mental
+        health status.
+    </p>
+
+    <div class="tech-stack">
+
+        <span class="tech">Python</span>
+        <span class="tech">AI</span>
+        <span class="tech">Machine Learning</span>
+        <span class="tech">Streamlit</span>
+
+    </div>
+
+    <a
+        href="https://github.com/Thirumalai260720/Automated-Mental-Health-Identification"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="github-link">
+
+        GitHub →
+
+    </a>
+
+</div>
+
+
+<!-- PROJECT 03 -->
+
+<div class="box featured-project">
+
+    <div class="project-number">
+        03
+    </div>
+
+    <div class="featured-label">
+        Featured Project
+    </div>
+
+    <div class="project-category">
+        Cybersecurity • Deep Learning
+    </div>
+
+    <h3>
+        Secure Image Encryption and Retrieval Framework Using CNNs and Streamlit
+    </h3>
+
+    <p>
+        A secure image-processing framework that combines
+        image encryption, CNN-based feature extraction,
+        and Streamlit to provide secure image encryption
+        and retrieval functionality.
+    </p>
+
+    <div class="tech-stack">
+
+        <span class="tech">Python</span>
+        <span class="tech">CNN</span>
+        <span class="tech">Deep Learning</span>
+        <span class="tech">Streamlit</span>
+        <span class="tech">Image Processing</span>
+        <span class="tech">Cryptography</span>
+
+    </div>
+
+    <a
+        href="https://github.com/Thirumalai260720/secure-image-encryption-CNN-and-Streamlit"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="github-link">
+
+        GitHub →
+
+    </a>
+
+</div>
+
+
 </section>
 
 </body>
+
 </html>
