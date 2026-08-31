@@ -1,151 +1,782 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thirumalai Portfolio | Skills</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <style>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thirumalai Portfolio | Skills</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<style>
+
+    /* ================= GLOBAL ================= */
+
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
-      background: linear-gradient(to right, #ece9e6, #ffffff);
-      background-image: radial-gradient(circle at top left, rgba(255, 200, 200, 0.2), transparent),
-                        radial-gradient(circle at bottom right, rgba(200, 200, 255, 0.2), transparent);
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: #333;
-      padding-top: 60px;
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        font-family: 'Inter', sans-serif;
+        background: #080b14;
+        color: #ffffff;
+        min-height: 100vh;
+        overflow-x: hidden;
+        line-height: 1.6;
     }
+
+    /* ================= BACKGROUND GLOW ================= */
+
+    body::before {
+        content: "";
+        position: fixed;
+
+        width: 500px;
+        height: 500px;
+
+        background: #2563eb;
+
+        filter: blur(180px);
+        opacity: 0.17;
+
+        top: -180px;
+        left: -150px;
+
+        z-index: -2;
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+
+        width: 450px;
+        height: 450px;
+
+        background: #7c3aed;
+
+        filter: blur(180px);
+        opacity: 0.15;
+
+        bottom: -150px;
+        right: -120px;
+
+        z-index: -2;
+    }
+
+    /* ================= NAVBAR ================= */
+
     nav {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      background-color: #2c3e50;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 1000;
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 75px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 7%;
+
+        background: rgba(8, 11, 20, 0.75);
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        z-index: 1000;
     }
+
     nav .logo {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #ffffff;
     }
+
+    nav .logo span {
+        color: #60a5fa;
+    }
+
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
+        list-style: none;
+
+        display: flex;
+
+        gap: 30px;
     }
+
     nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-      font-size: 16px;
+        color: #cbd5e1;
+
+        text-decoration: none;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        position: relative;
+
+        transition: 0.3s ease;
     }
+
     nav ul li a:hover {
-      color: #f39c12;
+        color: #60a5fa;
     }
+
+    nav ul li a::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -7px;
+
+        width: 0;
+        height: 2px;
+
+        background: #60a5fa;
+
+        transition: 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    /* ================= SKILLS SECTION ================= */
+
     section {
-      margin: 80px 20px 40px;
-      max-width: 900px;
-      width: 100%;
-      text-align: center;
+        max-width: 1100px;
+
+        width: 100%;
+
+        margin: 0 auto;
+
+        padding: 125px 7% 80px;
+
+        text-align: left;
     }
+
+    /* ================= HEADING ================= */
+
     h2 {
-      font-size: 36px;
-      color: #34495e;
-      margin-bottom: 40px;
-      letter-spacing: 1.5px;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 8px;
+        font-size: clamp(32px, 5vw, 48px);
+
+        font-weight: 800;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 30px;
+
+        position: relative;
+
+        display: inline-block;
     }
+
     h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, #f39c12, #e67e22);
-      margin: 8px auto 0;
-      border-radius: 2px;
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -12px;
+
+        width: 65px;
+        height: 4px;
+
+        border-radius: 10px;
+
+        background: linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
     }
 
-    .skills-box {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 30px;
-      padding: 0 10px;
+    /* ================= INTRO ================= */
+
+    .skills-intro {
+        max-width: 760px;
+
+        margin: 0 0 42px;
+
+        color: #94a3b8;
+
+        font-size: 14px;
+
+        line-height: 1.8;
     }
 
-    .skill-item {
-      background: linear-gradient(145deg, #ffffff, #d0e8ff);
-      border-radius: 20px;
-      box-shadow:
-        6px 6px 15px #a3c2ff,
-        -6px -6px 15px #ffffff;
-      padding: 30px 0;
-      font-size: 22px;
-      font-weight: 600;
-      color: #1a237e;
-      cursor: default;
-      user-select: none;
-      transition: transform 0.4s cubic-bezier(.03,.98,.52,.99),
-                  box-shadow 0.4s cubic-bezier(.03,.98,.52,.99);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      perspective: 600px;
+    /* ================= SKILLS GRID ================= */
+
+    .skills-container {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 22px;
+
+        width: 100%;
+
+        animation: fadeUp 0.8s ease forwards;
     }
 
-    .skill-item:hover {
-      transform: scale(1.1) rotateX(10deg) rotateY(10deg);
-      box-shadow:
-        12px 12px 25px #6b8de3,
-        -12px -12px 25px #d6f0ff;
-      background: linear-gradient(145deg, #e2f0ff, #a0c4ff);
-      color: #0d1b42;
+    /* ================= CATEGORY CARD ================= */
+
+    .skill-category {
+        position: relative;
+
+        padding: 28px;
+
+        background: rgba(255, 255, 255, 0.045);
+
+        border: 1px solid rgba(255, 255, 255, 0.10);
+
+        border-radius: 20px;
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        box-shadow:
+            0 20px 50px rgba(0, 0, 0, 0.22);
+
+        overflow: hidden;
+
+        transition: 0.35s ease;
     }
-  </style>
+
+    /* Top Accent */
+
+    .skill-category::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 3px;
+
+        background: linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+        transform: scaleX(0);
+
+        transform-origin: left;
+
+        transition: 0.35s ease;
+    }
+
+    .skill-category:hover::before {
+        transform: scaleX(1);
+    }
+
+    .skill-category:hover {
+        transform: translateY(-6px);
+
+        border-color: rgba(96, 165, 250, 0.30);
+
+        box-shadow:
+            0 28px 60px rgba(0, 0, 0, 0.35),
+            0 0 25px rgba(37, 99, 235, 0.07);
+    }
+
+    /* ================= CATEGORY TITLE ================= */
+
+    .category-title {
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        margin-bottom: 20px;
+
+        color: #f8fafc;
+
+        font-size: 17px;
+
+        font-weight: 700;
+    }
+
+    .category-icon {
+        width: 34px;
+        height: 34px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 9px;
+
+        background: rgba(37, 99, 235, 0.12);
+
+        border: 1px solid rgba(96, 165, 250, 0.20);
+
+        font-size: 16px;
+    }
+
+    /* ================= SKILL BADGES ================= */
+
+    .skill-list {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    .skill-badge {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        padding: 9px 13px;
+
+        border-radius: 9px;
+
+        background: rgba(255, 255, 255, 0.045);
+
+        border: 1px solid rgba(255, 255, 255, 0.09);
+
+        color: #cbd5e1;
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        transition: 0.3s ease;
+    }
+
+    .skill-badge:hover {
+        color: #ffffff;
+
+        background: rgba(96, 165, 250, 0.09);
+
+        border-color: rgba(96, 165, 250, 0.30);
+
+        transform: translateY(-3px);
+    }
+
+    /* ================= PYTHON HIGHLIGHT ================= */
+
+    .python-highlight {
+        grid-column: 1 / -1;
+
+        padding: 30px;
+
+        border-color: rgba(96, 165, 250, 0.18);
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(37, 99, 235, 0.08),
+                rgba(124, 58, 237, 0.07)
+            ),
+            rgba(255, 255, 255, 0.045);
+    }
+
+    .python-content {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 25px;
+    }
+
+    .python-info {
+        text-align: left;
+    }
+
+    .python-title {
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        margin-bottom: 8px;
+
+        color: #ffffff;
+
+        font-size: 21px;
+
+        font-weight: 800;
+    }
+
+    .python-icon {
+        font-size: 25px;
+    }
+
+    .python-info p {
+        color: #94a3b8;
+
+        font-size: 13px;
+
+        max-width: 650px;
+
+        line-height: 1.7;
+    }
+
+    .python-badge {
+        flex-shrink: 0;
+
+        padding: 9px 15px;
+
+        border-radius: 20px;
+
+        background: rgba(96, 165, 250, 0.10);
+
+        border: 1px solid rgba(96, 165, 250, 0.22);
+
+        color: #60a5fa;
+
+        font-size: 12px;
+
+        font-weight: 700;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    @keyframes fadeUp {
+
+        from {
+            opacity: 0;
+
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+    }
+
+    /* ================= TABLET ================= */
+
+    @media (max-width: 900px) {
+
+        nav {
+            padding: 0 5%;
+        }
+
+        nav ul {
+            gap: 15px;
+        }
+
+        section {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 650px) {
+
+        nav {
+            height: auto;
+
+            padding: 15px 5%;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 12px;
+        }
+
+        section {
+            padding-top: 150px;
+
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        h2 {
+            font-size: 34px;
+
+            margin-bottom: 30px;
+        }
+
+        .skills-intro {
+            font-size: 13px;
+
+            margin-bottom: 30px;
+        }
+
+        .skills-container {
+            grid-template-columns: 1fr;
+
+            gap: 16px;
+        }
+
+        .python-highlight {
+            grid-column: auto;
+        }
+
+        .skill-category {
+            padding: 22px;
+
+            border-radius: 17px;
+        }
+
+        .python-content {
+            align-items: flex-start;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        .python-title {
+            font-size: 19px;
+        }
+
+        .skill-badge {
+            font-size: 12px;
+
+            padding: 8px 11px;
+        }
+
+    }
+
+</style>
+
+
 </head>
+
 <body>
 
+
+<!-- ================= NAVBAR ================= -->
+
 <nav>
-  <div class="logo">My Portfolio</div>
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+
+    <div class="logo">
+        THIRUMALAI<span>.</span>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="home.html">Home</a>
+        </li>
+
+        <li>
+            <a href="about.html">About</a>
+        </li>
+
+        <li>
+            <a href="resume.html">Resume</a>
+        </li>
+
+        <li>
+            <a href="projects.html">Projects</a>
+        </li>
+
+        <li>
+            <a href="certifications.html">Certifications</a>
+        </li>
+
+        <li>
+            <a href="skills.html">Skills</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+    </ul>
+
 </nav>
 
+
+<!-- ================= SKILLS ================= -->
+
 <section id="skills">
-  <h2>My Skills</h2>
-  <div class="skills-box">
-    <div class="skill-item">💻 HTML</div>
-    <div class="skill-item">🎨 CSS</div>
-    <div class="skill-item">🐍 Python</div>
-    <div class="skill-item">☕ Java</div>
-    <div class="skill-item">📊 SQL</div>
-    <div class="skill-item">📡 IoT Basics</div>
-  </div>
+
+    <h2>My Skills</h2>
+
+    <p class="skills-intro">
+        A growing technical skill set focused on Python development,
+        web technologies, databases, application development, and
+        AI-integrated software solutions.
+    </p>
+
+
+    <div class="skills-container">
+
+
+        <!-- PYTHON HIGHLIGHT -->
+
+        <div class="skill-category python-highlight">
+
+            <div class="python-content">
+
+                <div class="python-info">
+
+                    <div class="python-title">
+
+                        <span class="python-icon">🐍</span>
+
+                        Python Development
+
+                    </div>
+
+                    <p>
+                        My primary development focus, with hands-on experience
+                        in Python programming, application development,
+                        Streamlit, and problem solving.
+                    </p>
+
+                </div>
+
+                <div class="python-badge">
+                    Primary Focus
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FRONTEND -->
+
+        <div class="skill-category">
+
+            <div class="category-title">
+
+                <span class="category-icon">🌐</span>
+
+                Frontend
+
+            </div>
+
+            <div class="skill-list">
+
+                <span class="skill-badge">💻 HTML5</span>
+
+                <span class="skill-badge">🎨 CSS3</span>
+
+                <span class="skill-badge">⚡ JavaScript</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- BACKEND -->
+
+        <div class="skill-category">
+
+            <div class="category-title">
+
+                <span class="category-icon">⚙️</span>
+
+                Backend & Frameworks
+
+            </div>
+
+            <div class="skill-list">
+
+                <span class="skill-badge">🐍 Python</span>
+
+                <span class="skill-badge">🚀 Django</span>
+
+                <span class="skill-badge">📊 Streamlit</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- DATABASE -->
+
+        <div class="skill-category">
+
+            <div class="category-title">
+
+                <span class="category-icon">🗄️</span>
+
+                Database
+
+            </div>
+
+            <div class="skill-list">
+
+                <span class="skill-badge">🗄️ MySQL</span>
+
+                <span class="skill-badge">💾 SQL</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOOLS -->
+
+        <div class="skill-category">
+
+            <div class="category-title">
+
+                <span class="category-icon">🛠️</span>
+
+                Tools & Version Control
+
+            </div>
+
+            <div class="skill-list">
+
+                <span class="skill-badge">🔧 Git</span>
+
+                <span class="skill-badge">🐙 GitHub</span>
+
+                <span class="skill-badge">💻 VS Code</span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 </section>
 
+
 </body>
+
 </html>
