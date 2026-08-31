@@ -1,135 +1,698 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thirumalai Portfolio | Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <style>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thirumalai Portfolio | Resume</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<style>
+
+    /* ================= GLOBAL ================= */
+
     * {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      box-sizing: border-box;
-    }
-    body {
-      background: linear-gradient(to right, #ece9e6, #ffffff);
-      background-image: radial-gradient(circle at top left, rgba(255, 200, 200, 0.2), transparent),
-                        radial-gradient(circle at bottom right, rgba(200, 200, 255, 0.2), transparent);
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: #333;
-      padding-top: 60px;
-      line-height: 1.6;
-    }
-    nav {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      background-color: #2c3e50;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-    nav .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #f39c12;
-    }
-    header, section {
-      margin: 60px 20px;
-    }
-    h2 {
-      font-size: 28px;
-      border-left: 5px solid #3498db;
-      padding-left: 10px;
-      color: #2c3e50;
-      margin-bottom: 20px;
-    }
-    button {
-      padding: 10px 20px;
-      background: #3498db;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #2980b9;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    /* ✅ Resume box with hover effect */
-    .box {
-      background: rgba(255,255,255,0.95);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      max-width: 650px;
-      margin: auto;
-      transition: transform 0.3s, box-shadow 0.3s;
+    html {
+        scroll-behavior: smooth;
     }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #080b14;
+        color: #ffffff;
+        min-height: 100vh;
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+
+    /* ================= BACKGROUND GLOW ================= */
+
+    body::before {
+        content: "";
+        position: fixed;
+
+        width: 500px;
+        height: 500px;
+
+        background: #2563eb;
+
+        filter: blur(180px);
+        opacity: 0.17;
+
+        top: -180px;
+        left: -150px;
+
+        z-index: -2;
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+
+        width: 450px;
+        height: 450px;
+
+        background: #7c3aed;
+
+        filter: blur(180px);
+        opacity: 0.15;
+
+        bottom: -150px;
+        right: -120px;
+
+        z-index: -2;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 75px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 7%;
+
+        background: rgba(8, 11, 20, 0.75);
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        z-index: 1000;
+    }
+
+    nav .logo {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #ffffff;
+    }
+
+    nav .logo span {
+        color: #60a5fa;
+    }
+
+    nav ul {
+        list-style: none;
+
+        display: flex;
+
+        gap: 30px;
+    }
+
+    nav ul li a {
+        color: #cbd5e1;
+
+        text-decoration: none;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        position: relative;
+
+        transition: 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #60a5fa;
+    }
+
+    nav ul li a::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -7px;
+
+        width: 0;
+        height: 2px;
+
+        background: #60a5fa;
+
+        transition: 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    /* ================= RESUME SECTION ================= */
+
+    section {
+        max-width: 1000px;
+
+        margin: 0 auto;
+
+        padding: 125px 7% 70px;
+    }
+
+    /* ================= HEADING ================= */
+
+    h2 {
+        font-size: clamp(32px, 5vw, 48px);
+
+        font-weight: 800;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 18px;
+
+        position: relative;
+
+        display: inline-block;
+    }
+
+    h2::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -10px;
+
+        width: 65px;
+        height: 4px;
+
+        border-radius: 10px;
+
+        background: linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+    }
+
+    /* ================= INTRO ================= */
+
+    .resume-intro {
+        color: #94a3b8;
+
+        font-size: 15px;
+
+        max-width: 700px;
+
+        margin-bottom: 30px;
+
+        line-height: 1.8;
+
+        animation: fadeUp 0.7s ease forwards;
+    }
+
+    .resume-intro span {
+        color: #60a5fa;
+
+        font-weight: 600;
+    }
+
+    /* ================= RESUME CARD ================= */
+
+    .resume-container {
+        width: 100%;
+
+        animation: fadeUp 0.8s ease forwards;
+    }
+
+    .box {
+        position: relative;
+
+        background: rgba(255, 255, 255, 0.045);
+
+        border: 1px solid rgba(255, 255, 255, 0.10);
+
+        padding: 18px;
+
+        border-radius: 24px;
+
+        box-shadow:
+            0 25px 60px rgba(0, 0, 0, 0.30);
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        transition: 0.35s ease;
+
+        overflow: hidden;
+    }
+
+    .box::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 10%;
+
+        width: 80%;
+        height: 1px;
+
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(96, 165, 250, 0.7),
+            rgba(124, 58, 237, 0.7),
+            transparent
+        );
+    }
+
     .box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        transform: translateY(-5px);
+
+        border-color: rgba(96, 165, 250, 0.35);
+
+        box-shadow:
+            0 30px 75px rgba(0, 0, 0, 0.42),
+            0 0 35px rgba(37, 99, 235, 0.08);
+    }
+
+    /* ================= RESUME HEADER ================= */
+
+    .resume-header {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 5px 8px 16px;
+    }
+
+    .resume-title {
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    .resume-icon {
+        width: 34px;
+        height: 34px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 9px;
+
+        background: linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+        font-size: 16px;
+
+        box-shadow:
+            0 8px 20px rgba(37, 99, 235, 0.20);
+    }
+
+    .resume-title strong {
+        font-size: 14px;
+
+        color: #e2e8f0;
+    }
+
+    .resume-status {
+        font-size: 12px;
+
+        color: #64748b;
+
+        padding: 6px 10px;
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        border-radius: 20px;
+
+        background: rgba(255, 255, 255, 0.025);
+    }
+
+    /* ================= RESUME PREVIEW ================= */
+
+    .resume-preview {
+        position: relative;
+
+        border-radius: 15px;
+
+        overflow: hidden;
+
+        background: #ffffff;
+
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.30);
     }
 
     iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 10px;
-      display: block;
+        width: 100%;
+
+        height: 720px;
+
+        border: none;
+
+        display: block;
+
+        background: #ffffff;
     }
-  </style>
+
+    /* ================= DOWNLOAD AREA ================= */
+
+    .download-area {
+        padding: 22px 8px 5px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+    }
+
+    .download-text {
+        color: #64748b;
+
+        font-size: 12px;
+    }
+
+    .download-text span {
+        color: #94a3b8;
+
+        font-weight: 600;
+    }
+
+    /* ================= DOWNLOAD BUTTON ================= */
+
+    .download-btn {
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        padding: 13px 25px;
+
+        background: linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+        color: #ffffff;
+
+        text-decoration: none;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        box-shadow:
+            0 10px 30px rgba(37, 99, 235, 0.25);
+
+        transition: 0.3s ease;
+    }
+
+    .download-btn:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 15px 35px rgba(37, 99, 235, 0.40);
+    }
+
+    .download-btn:active {
+        transform: translateY(0);
+    }
+
+    /* ================= ANIMATION ================= */
+
+    @keyframes fadeUp {
+
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+    /* ================= TABLET ================= */
+
+    @media (max-width: 900px) {
+
+        nav {
+            padding: 0 5%;
+        }
+
+        nav ul {
+            gap: 15px;
+        }
+
+        section {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 650px) {
+
+        nav {
+            height: auto;
+
+            padding: 15px 5%;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 12px;
+        }
+
+        section {
+            padding-top: 150px;
+
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        h2 {
+            font-size: 34px;
+        }
+
+        .resume-intro {
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+        .box {
+            padding: 12px;
+
+            border-radius: 18px;
+        }
+
+        .resume-header {
+            padding: 4px 5px 12px;
+        }
+
+        .resume-status {
+            display: none;
+        }
+
+        iframe {
+            height: 600px;
+
+            border-radius: 10px;
+        }
+
+        .download-area {
+            flex-direction: column;
+
+            align-items: stretch;
+
+            text-align: center;
+        }
+
+        .download-btn {
+            width: 100%;
+
+            padding: 12px 22px;
+
+            font-size: 13px;
+        }
+
+    }
+
+</style>
+
+
 </head>
+
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
 <nav>
-  <div class="logo">My Portfolio</div>
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+
+
+<div class="logo">
+    THIRUMALAI<span>.</span>
+</div>
+
+<ul>
+
+    <li>
+        <a href="home.html">Home</a>
+    </li>
+
+    <li>
+        <a href="about.html">About</a>
+    </li>
+
+    <li>
+        <a href="resume.html">Resume</a>
+    </li>
+
+    <li>
+        <a href="projects.html">Projects</a>
+    </li>
+
+    <li>
+        <a href="certifications.html">Certifications</a>
+    </li>
+
+    <li>
+        <a href="skills.html">Skills</a>
+    </li>
+
+    <li>
+        <a href="contact.html">Contact</a>
+    </li>
+
+</ul>
+
+
 </nav>
 
+<!-- ================= RESUME ================= -->
+
 <section id="resume">
-  <h2>Resume</h2>
-  <div class="resume-container">
+
+
+<h2>Resume</h2>
+
+<p class="resume-intro">
+    Explore my <span>professional resume</span> to learn more about
+    my technical skills, projects, education, certifications,
+    and experience in software development.
+</p>
+
+
+<div class="resume-container">
+
     <div class="box resume-box">
-      <iframe 
-        src="resume.jpg" 
-        title="Resume PDF Preview">
-      </iframe>
-      <div style="padding-top: 20px; text-align: center;">
-        <a href="THIRU resume pdf.pdf" download>
-          <button>Download Resume</button>
-        </a>
-      </div>
+
+
+        <!-- Resume Header -->
+
+        <div class="resume-header">
+
+            <div class="resume-title">
+
+                <div class="resume-icon">
+                    📄
+                </div>
+
+                <strong>
+                    Thirumalai Vasan S 
+                </strong>
+
+            </div>
+
+            <div class="resume-status">
+                Updated 2026
+            </div>
+
+        </div>
+
+
+        <!-- Resume Preview -->
+
+        <div class="resume-preview">
+
+            <iframe
+                src="resume.png"
+                title="Thirumalai Vasan S Resume Preview">
+            </iframe>
+
+        </div>
+
+
+        <!-- Download -->
+
+        <div class="download-area">
+
+            <p class="download-text">
+                <span>Ready to connect?</span>
+                Download my resume for more details.
+            </p>
+
+            <a
+                href="new resume.pdf"
+                download
+                class="download-btn">
+
+                ↓ &nbsp; Download Resume
+
+            </a>
+
+        </div>
+
     </div>
-  </div>
+
+</div>
+
 </section>
 
 </body>
+
 </html>
