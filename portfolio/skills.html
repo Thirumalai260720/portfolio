@@ -1,867 +1,884 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thirumalai Vasan S | Skills</title>
 
-<title>Thirumalai Portfolio | Skills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<style>
+    <style>
 
-    /* ================= GLOBAL ================= */
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: 'Inter', sans-serif;
-        background: #080b14;
-        color: #ffffff;
-        min-height: 100vh;
-        overflow-x: hidden;
-        line-height: 1.6;
-    }
-
-    /* ================= BACKGROUND GLOW ================= */
-
-    body::before {
-        content: "";
-
-        position: fixed;
-
-        width: 500px;
-        height: 500px;
-
-        background: #2563eb;
-
-        filter: blur(180px);
-        opacity: 0.17;
-
-        top: -180px;
-        left: -150px;
-
-        z-index: -2;
-    }
-
-    body::after {
-        content: "";
-
-        position: fixed;
-
-        width: 450px;
-        height: 450px;
-
-        background: #7c3aed;
-
-        filter: blur(180px);
-        opacity: 0.15;
-
-        bottom: -150px;
-        right: -120px;
-
-        z-index: -2;
-    }
-
-    /* ================= NAVBAR ================= */
-
-    nav {
-        position: fixed;
-
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 75px;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        padding: 0 7%;
-
-        background: rgba(8, 11, 20, 0.75);
-
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-        z-index: 1000;
-    }
-
-    nav .logo {
-        font-size: 22px;
-        font-weight: 800;
-        letter-spacing: 1px;
-        color: #ffffff;
-    }
-
-    nav .logo span {
-        color: #60a5fa;
-    }
-
-    nav ul {
-        list-style: none;
-
-        display: flex;
-
-        gap: 30px;
-    }
-
-    nav ul li a {
-        color: #cbd5e1;
-
-        text-decoration: none;
-
-        font-size: 14px;
-        font-weight: 600;
-
-        position: relative;
-
-        transition: 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        color: #60a5fa;
-    }
-
-    nav ul li a::after {
-        content: "";
-
-        position: absolute;
-
-        left: 0;
-        bottom: -7px;
-
-        width: 0;
-        height: 2px;
-
-        background: #60a5fa;
-
-        transition: 0.3s ease;
-    }
-
-    nav ul li a:hover::after {
-        width: 100%;
-    }
-
-    /* ================= SKILLS SECTION ================= */
-
-    section {
-        max-width: 1100px;
-
-        width: 100%;
-
-        margin: 0 auto;
-
-        padding: 125px 7% 80px;
-
-        text-align: left;
-    }
-
-    /* ================= HEADING ================= */
-
-    h2 {
-        font-size: clamp(32px, 5vw, 48px);
-
-        font-weight: 800;
-
-        letter-spacing: -1px;
-
-        margin-bottom: 30px;
-
-        position: relative;
-
-        display: inline-block;
-    }
-
-    h2::after {
-        content: "";
-
-        position: absolute;
-
-        left: 0;
-        bottom: -12px;
-
-        width: 65px;
-        height: 4px;
-
-        border-radius: 10px;
-
-        background: linear-gradient(
-            90deg,
-            #2563eb,
-            #7c3aed
-        );
-    }
-
-    /* ================= INTRO ================= */
-
-    .skills-intro {
-        max-width: 760px;
-
-        margin: 0 0 42px;
-
-        color: #94a3b8;
-
-        font-size: 14px;
-
-        line-height: 1.8;
-    }
-
-    /* ================= SKILLS GRID ================= */
-
-    .skills-container {
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 22px;
-
-        width: 100%;
-
-        animation: fadeUp 0.8s ease forwards;
-    }
-
-    /* ================= CATEGORY CARD ================= */
-
-    .skill-category {
-        position: relative;
-
-        padding: 28px;
-
-        background: rgba(255, 255, 255, 0.045);
-
-        border: 1px solid rgba(255, 255, 255, 0.10);
-
-        border-radius: 20px;
-
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-
-        box-shadow:
-            0 20px 50px rgba(0, 0, 0, 0.22);
-
-        overflow: hidden;
-
-        transition: 0.35s ease;
-    }
-
-    /* Top Accent */
-
-    .skill-category::before {
-        content: "";
-
-        position: absolute;
-
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 3px;
-
-        background: linear-gradient(
-            90deg,
-            #2563eb,
-            #7c3aed
-        );
-
-        transform: scaleX(0);
-
-        transform-origin: left;
-
-        transition: 0.35s ease;
-    }
-
-    .skill-category:hover::before {
-        transform: scaleX(1);
-    }
-
-    .skill-category:hover {
-        transform: translateY(-6px);
-
-        border-color: rgba(96, 165, 250, 0.30);
-
-        box-shadow:
-            0 28px 60px rgba(0, 0, 0, 0.35),
-            0 0 25px rgba(37, 99, 235, 0.07);
-    }
-
-    /* ================= CATEGORY TITLE ================= */
-
-    .category-title {
-        display: flex;
-
-        align-items: center;
-
-        gap: 10px;
-
-        margin-bottom: 20px;
-
-        color: #f8fafc;
-
-        font-size: 17px;
-
-        font-weight: 700;
-    }
-
-    .category-icon {
-        width: 34px;
-        height: 34px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 9px;
-
-        background: rgba(37, 99, 235, 0.12);
-
-        border: 1px solid rgba(96, 165, 250, 0.20);
-
-        font-size: 16px;
-    }
-
-    /* ================= SKILL BADGES ================= */
-
-    .skill-list {
-        display: flex;
-
-        flex-wrap: wrap;
-
-        gap: 10px;
-    }
-
-    .skill-badge {
-        display: inline-flex;
-
-        align-items: center;
-
-        gap: 7px;
-
-        padding: 9px 13px;
-
-        border-radius: 9px;
-
-        background: rgba(255, 255, 255, 0.045);
-
-        border: 1px solid rgba(255, 255, 255, 0.09);
-
-        color: #cbd5e1;
-
-        font-size: 13px;
-
-        font-weight: 600;
-
-        transition: 0.3s ease;
-    }
-
-    .skill-badge:hover {
-        color: #ffffff;
-
-        background: rgba(96, 165, 250, 0.09);
-
-        border-color: rgba(96, 165, 250, 0.30);
-
-        transform: translateY(-3px);
-    }
-
-    /* ================= PYTHON HIGHLIGHT ================= */
-
-    .python-highlight {
-        grid-column: 1 / -1;
-
-        padding: 30px;
-
-        border-color: rgba(96, 165, 250, 0.18);
-
-        background:
-            linear-gradient(
-                135deg,
-                rgba(37, 99, 235, 0.08),
-                rgba(124, 58, 237, 0.07)
-            ),
-            rgba(255, 255, 255, 0.045);
-    }
-
-    .python-content {
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        gap: 25px;
-    }
-
-    .python-info {
-        text-align: left;
-    }
-
-    .python-title {
-        display: flex;
-
-        align-items: center;
-
-        gap: 12px;
-
-        margin-bottom: 8px;
-
-        color: #ffffff;
-
-        font-size: 21px;
-
-        font-weight: 800;
-    }
-
-    .python-icon {
-        font-size: 25px;
-    }
-
-    .python-info p {
-        color: #94a3b8;
-
-        font-size: 13px;
-
-        max-width: 650px;
-
-        line-height: 1.7;
-    }
-
-    .python-badge {
-        flex-shrink: 0;
-
-        padding: 9px 15px;
-
-        border-radius: 20px;
-
-        background: rgba(96, 165, 250, 0.10);
-
-        border: 1px solid rgba(96, 165, 250, 0.22);
-
-        color: #60a5fa;
-
-        font-size: 12px;
-
-        font-weight: 700;
-    }
-
-    /* ================= ANIMATION ================= */
-
-    @keyframes fadeUp {
-
-        from {
-            opacity: 0;
-
-            transform: translateY(30px);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        to {
-            opacity: 1;
-
-            transform: translateY(0);
+        html {
+            scroll-behavior: smooth;
         }
 
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #080b14;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-    /* ================= TABLET ================= */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -120px;
+            left: -120px;
+            width: 500px;
+            height: 500px;
+            background: #2563eb;
+            opacity: 0.10;
+            filter: blur(180px);
+            border-radius: 50%;
+            z-index: -1;
+        }
 
-    @media (max-width: 900px) {
+        body::after {
+            content: "";
+            position: fixed;
+            bottom: -120px;
+            right: -120px;
+            width: 450px;
+            height: 450px;
+            background: #7c3aed;
+            opacity: 0.10;
+            filter: blur(180px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        /* Navbar */
 
         nav {
-            padding: 0 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: rgba(8, 11, 20, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #60a5fa;
         }
 
         nav ul {
-            gap: 15px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
         }
+
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+
+        /* Section */
 
         section {
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-
-    }
-
-    /* ================= MOBILE ================= */
-
-    @media (max-width: 650px) {
-
-        nav {
-            height: auto;
-
-            padding: 15px 5%;
-
-            flex-direction: column;
-
-            gap: 12px;
-        }
-
-        nav ul {
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            gap: 12px;
-        }
-
-        section {
-            padding-top: 150px;
-
-            padding-left: 5%;
-            padding-right: 5%;
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 125px 7% 80px;
+            text-align: left;
         }
 
         h2 {
-            font-size: 34px;
-
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            letter-spacing: -1px;
             margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -12px;
+            width: 65px;
+            height: 4px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
         }
 
         .skills-intro {
-            font-size: 13px;
-
-            margin-bottom: 30px;
+            max-width: 760px;
+            margin: 0 0 42px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.8;
         }
+
+        /* Skills Layout */
 
         .skills-container {
-            grid-template-columns: 1fr;
-
-            gap: 16px;
+            width: 100%;
+            animation: fadeUp 0.8s ease forwards;
         }
 
-        .python-highlight {
-            grid-column: auto;
+        .skills-columns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            width: 100%;
+            margin-top: 22px;
         }
+
+        .skills-column {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        /* Skill Cards */
 
         .skill-category {
-            padding: 22px;
+            position: relative;
+            padding: 28px;
 
-            border-radius: 17px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+
+            border-radius: 20px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+
+            overflow: hidden;
+
+            transition: 0.35s ease;
         }
 
-        .python-content {
-            align-items: flex-start;
+        .skill-category::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
 
-            flex-direction: column;
+            width: 100%;
+            height: 3px;
 
-            gap: 15px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+
+            transform: scaleX(0);
+            transform-origin: left;
+
+            transition: 0.35s ease;
         }
 
-        .python-title {
-            font-size: 19px;
+        .skill-category:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-6px);
+
+            border-color: rgba(96, 165, 250, 0.30);
+
+            box-shadow:
+                0 28px 60px rgba(0, 0, 0, 0.35),
+                0 0 25px rgba(37, 99, 235, 0.07);
+        }
+
+        /* Category Title */
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 20px;
+
+            color: #f8fafc;
+
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .category-icon {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 9px;
+
+            background: rgba(37, 99, 235, 0.12);
+            border: 1px solid rgba(96, 165, 250, 0.20);
+
+            font-size: 16px;
+        }
+
+        /* Skill Badges */
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .skill-badge {
-            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
 
-            padding: 8px 11px;
+            padding: 9px 13px;
+
+            border-radius: 9px;
+
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+
+            color: #cbd5e1;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.3s ease;
         }
 
-    }
+        .skill-badge:hover {
+            color: #fff;
 
-</style>
+            background: rgba(96, 165, 250, 0.09);
+
+            border-color: rgba(96, 165, 250, 0.30);
+
+            transform: translateY(-3px);
+        }
+
+        /* Python Highlight */
+
+        .python-highlight {
+            width: 100%;
+
+            padding: 30px;
+
+            border-color: rgba(96, 165, 250, 0.18);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(37, 99, 235, 0.08),
+                    rgba(124, 58, 237, 0.07)
+                ),
+                rgba(255, 255, 255, 0.045);
+        }
+
+        .python-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .python-info {
+            text-align: left;
+        }
+
+        .python-title {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+            margin-bottom: 8px;
+
+            color: #fff;
+
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        .python-icon {
+            font-size: 25px;
+        }
+
+        .python-info p {
+            color: #94a3b8;
+
+            font-size: 13px;
+
+            max-width: 650px;
+
+            line-height: 1.7;
+        }
+
+        .python-badge {
+            flex-shrink: 0;
+
+            padding: 9px 15px;
+
+            border-radius: 20px;
+
+            background: rgba(96, 165, 250, 0.10);
+
+            border: 1px solid rgba(96, 165, 250, 0.22);
+
+            color: #60a5fa;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* Animation */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        /* Tablet */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+        }
+
+        /* Mobile */
+
+        @media (max-width: 650px) {
+
+            nav {
+                height: auto;
+
+                padding: 15px 5%;
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 12px;
+            }
+
+            section {
+                padding-top: 150px;
+
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            h2 {
+                font-size: 34px;
+
+                margin-bottom: 30px;
+            }
+
+            .skills-intro {
+                font-size: 13px;
+
+                margin-bottom: 30px;
+            }
+
+            .skills-columns {
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+
+                margin-top: 16px;
+            }
+
+            .skills-column {
+                gap: 16px;
+            }
+
+            .skill-category {
+                padding: 22px;
+
+                border-radius: 17px;
+            }
+
+            .python-content {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .python-title {
+                font-size: 19px;
+            }
+
+            .skill-badge {
+                font-size: 12px;
+
+                padding: 8px 11px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
 
-<nav>
+    <!-- Navbar -->
 
-    <div class="logo">
-        THIRUMALAI<span>.</span>
-    </div>
+    <nav>
 
-    <ul>
+        <div class="logo">
+            THIRUMALAI<span>.</span>
+        </div>
 
-        <li>
-            <a href="index.html">Home</a>
-        </li>
+        <ul>
 
-        <li>
-            <a href="about.html">About</a>
-        </li>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
 
-        <li>
-            <a href="resume.html">Resume</a>
-        </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
 
-        <li>
-            <a href="projects.html">Projects</a>
-        </li>
+            <li>
+                <a href="resume.html">Resume</a>
+            </li>
 
-        <li>
-            <a href="certifications.html">Certifications</a>
-        </li>
+            <li>
+                <a href="projects.html">Projects</a>
+            </li>
 
-        <li>
-            <a href="skills.html">Skills</a>
-        </li>
+            <li>
+                <a href="certifications.html">Certifications</a>
+            </li>
 
-        <li>
-            <a href="contact.html">Contact</a>
-        </li>
+            <li>
+                <a href="skills.html">Skills</a>
+            </li>
 
-    </ul>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
 
-</nav>
+        </ul>
 
-<!-- ================= SKILLS ================= -->
+    </nav>
 
-<section id="skills">
 
-    <h2>My Skills</h2>
+    <!-- Skills Section -->
 
-    <p class="skills-intro">
-        A strong technical skill set focused on Python Full Stack development,
-        web technologies, databases, application development, and AI-based
-        software solutions.
-    </p>
+    <section id="skills">
 
-    <div class="skills-container">
+        <h2>Skills</h2>
 
-        <!-- PYTHON HIGHLIGHT -->
+        <p class="skills-intro">
+            A collection of my technical skills and technologies I have learned
+            and worked with throughout my academic projects and development journey.
+        </p>
 
-        <div class="skill-category python-highlight">
 
-            <div class="python-content">
+        <div class="skills-container">
 
-                <div class="python-info">
 
-                    <div class="python-title">
+            <!-- Python Highlight -->
 
-                        <span class="python-icon">🐍</span>
+            <div class="skill-category python-highlight">
 
-                        Python Full Stack Development
+                <div class="python-content">
+
+                    <div class="python-info">
+
+                        <div class="python-title">
+
+                            <span class="python-icon">
+                                🐍
+                            </span>
+
+                            Python Full Stack Development
+
+                        </div>
+
+                        <p>
+                            Strong foundation in Core and Advanced Python with
+                            Object-Oriented Programming, file handling,
+                            exception handling, generators, decorators,
+                            multithreading, regular expressions, lambda functions,
+                            NumPy, and Tkinter.
+                        </p>
 
                     </div>
 
-                    <p>
-                        Strong foundation in Core and Advanced Python with
-                        Object-Oriented Programming, file handling, exception
-                        handling, generators, decorators, multithreading,
-                        regular expressions, lambda functions, NumPy, and Tkinter.
-                    </p>
+                    <div class="python-badge">
+                        Primary Focus
+                    </div>
 
                 </div>
 
-                <div class="python-badge">
-                    Primary Focus
+            </div>
+
+
+            <!-- Two Skill Columns -->
+
+            <div class="skills-columns">
+
+
+                <!-- LEFT COLUMN -->
+
+                <div class="skills-column">
+
+
+                    <!-- Frontend Development -->
+
+                    <div class="skill-category">
+
+                        <div class="category-title">
+
+                            <span class="category-icon">
+                                🎨
+                            </span>
+
+                            Frontend Development
+
+                        </div>
+
+                        <div class="skill-list">
+
+                            <span class="skill-badge">
+                                🌐 HTML5
+                            </span>
+
+                            <span class="skill-badge">
+                                🎨 CSS3
+                            </span>
+
+                            <span class="skill-badge">
+                                ⚡ JavaScript
+                            </span>
+
+                            <span class="skill-badge">
+                                🧩 Bootstrap
+                            </span>
+
+                            <span class="skill-badge">
+                                📱 Responsive Design
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Database & SQL -->
+
+                    <div class="skill-category">
+
+                        <div class="category-title">
+
+                            <span class="category-icon">
+                                🗄️
+                            </span>
+
+                            Database & SQL
+
+                        </div>
+
+                        <div class="skill-list">
+
+                            <span class="skill-badge">
+                                🗄️ MySQL
+                            </span>
+
+                            <span class="skill-badge">
+                                💾 SQL
+                            </span>
+
+                            <span class="skill-badge">
+                                📊 Database Management
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Data & Application Libraries -->
+
+                    <div class="skill-category">
+
+                        <div class="category-title">
+
+                            <span class="category-icon">
+                                📊
+                            </span>
+
+                            Data & Application Libraries
+
+                        </div>
+
+                        <div class="skill-list">
+
+                            <span class="skill-badge">
+                                🔢 NumPy
+                            </span>
+
+                            <span class="skill-badge">
+                                🖥️ Tkinter
+                            </span>
+
+                            <span class="skill-badge">
+                                👁️ OpenCV
+                            </span>
+
+                            <span class="skill-badge">
+                                🧠 CNN
+                            </span>
+
+                            <span class="skill-badge">
+                                🤖 Machine Learning
+                            </span>
+
+                            <span class="skill-badge">
+                                🖼️ Image Processing
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Tools & Version Control -->
+
+                    <div class="skill-category">
+
+                        <div class="category-title">
+
+                            <span class="category-icon">
+                                🛠️
+                            </span>
+
+                            Tools & Version Control
+
+                        </div>
+
+                        <div class="skill-list">
+
+                            <span class="skill-badge">
+                                🔧 Git
+                            </span>
+
+                            <span class="skill-badge">
+                                🐙 GitHub
+                            </span>
+
+                            <span class="skill-badge">
+                                💻 VS Code
+                            </span>
+
+                            <span class="skill-badge">
+                                📓 Jupyter Notebook
+                            </span>
+
+                            <span class="skill-badge">
+                                ☁️ Google Colab
+                            </span>
+
+                            <span class="skill-badge">
+                                🖥️ XAMPP
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT COLUMN -->
+
+                <div class="skills-column">
+
+
+                    <!-- Backend & Frameworks -->
+
+                    <div class="skill-category">
+
+                        <div class="category-title">
+
+                            <span class="category-icon">
+                                ⚙️
+                            </span>
+
+                            Backend & Frameworks
+
+                        </div>
+
+                        <div class="skill-list">
+
+                            <span class="skill-badge">
+                                🐍 Python
+                            </span>
+
+                            <span class="skill-badge">
+                                🌐 Django
+                            </span>
+
+                            <span class="skill-badge">
+                                📊 Streamlit
+                            </span>
+
+                            <span class="skill-badge">
+                                📝 Django Forms
+                            </span>
+
+                            <span class="skill-badge">
+                                🗃️ Django Models
+                            </span>
+
+                            <span class="skill-badge">
+                                🔄 CRUD Operations
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Advanced Python -->
+
+                    <div class="skill-category">
+
+                        <div class="category-title">
+
+                            <span class="category-icon">
+                                🚀
+                            </span>
+
+                            Advanced Python
+
+                        </div>
+
+                        <div class="skill-list">
+
+                            <span class="skill-badge">
+                                🧩 OOP
+                            </span>
+
+                            <span class="skill-badge">
+                                📄 Python with TXT Integration
+                            </span>
+
+                            <span class="skill-badge">
+                                📊 Python with CSV Integration
+                            </span>
+
+                            <span class="skill-badge">
+                                🗄️ Python with SQL Integration
+                            </span>
+
+                            <span class="skill-badge">
+                                ⚠️ Exception Handling
+                            </span>
+
+                            <span class="skill-badge">
+                                🔄 Generators
+                            </span>
+
+                            <span class="skill-badge">
+                                🎯 Decorators
+                            </span>
+
+                            <span class="skill-badge">
+                                🧵 Multithreading
+                            </span>
+
+                            <span class="skill-badge">
+                                🔍 Regular Expressions
+                            </span>
+
+                            <span class="skill-badge">
+                                λ Lambda Functions
+                            </span>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
 
-        <!-- FRONTEND -->
+    </section>
 
-        <div class="skill-category">
-
-            <div class="category-title">
-
-                <span class="category-icon">🌐</span>
-
-                Frontend Development
-
-            </div>
-
-            <div class="skill-list">
-
-                <span class="skill-badge">💻 HTML5</span>
-
-                <span class="skill-badge">🎨 CSS3</span>
-
-                <span class="skill-badge">⚡ JavaScript</span>
-
-                <span class="skill-badge">🧩 Bootstrap</span>
-
-                <span class="skill-badge">📱 Responsive Design</span>
-
-            </div>
-
-        </div>
-
-        <!-- BACKEND -->
-
-        <div class="skill-category">
-
-            <div class="category-title">
-
-                <span class="category-icon">⚙️</span>
-
-                Backend & Frameworks
-
-            </div>
-
-            <div class="skill-list">
-
-                <span class="skill-badge">🐍 Python</span>
-
-                <span class="skill-badge">🚀 Django</span>
-
-                <span class="skill-badge">📊 Streamlit</span>
-
-                <span class="skill-badge">🔗 Django Forms</span>
-
-                <span class="skill-badge">🗂️ Django Models</span>
-
-                <span class="skill-badge">♻️ CRUD Operations</span>
-
-            </div>
-
-        </div>
-
-        <!-- DATABASE -->
-
-        <div class="skill-category">
-
-            <div class="category-title">
-
-                <span class="category-icon">🗄️</span>
-
-                Database & SQL
-
-            </div>
-
-            <div class="skill-list">
-
-                <span class="skill-badge">🗄️ MySQL</span>
-
-                <span class="skill-badge">💾 SQL</span>
-
-                <span class="skill-badge">📋 DDL</span>
-
-                <span class="skill-badge">📝 DML</span>
-
-                <span class="skill-badge">🔗 SQL Joins</span>
-
-                <span class="skill-badge">📊 Aggregate Functions</span>
-
-            </div>
-
-        </div>
-
-        <!-- PYTHON ADVANCED -->
-
-        <div class="skill-category">
-
-            <div class="category-title">
-
-                <span class="category-icon">🧠</span>
-
-                Advanced Python
-
-            </div>
-
-            <div class="skill-list">
-
-                <span class="skill-badge">🔷 OOP</span>
-
-                <span class="skill-badge">🔐 Encapsulation</span>
-
-                <span class="skill-badge">🧬 Inheritance</span>
-
-                <span class="skill-badge">🔄 Polymorphism</span>
-
-                <span class="skill-badge">🎯 Abstraction</span>
-
-                <span class="skill-badge">⚡ Generators</span>
-
-                <span class="skill-badge">🎨 Decorators</span>
-
-                <span class="skill-badge">🧵 Multithreading</span>
-
-                <span class="skill-badge">🔎 Regular Expressions</span>
-
-                <span class="skill-badge">λ Lambda Functions</span>
-
-            </div>
-
-        </div>
-
-        <!-- DATA & GUI -->
-
-        <div class="skill-category">
-
-            <div class="category-title">
-
-                <span class="category-icon">📊</span>
-
-                Data & Application Libraries
-
-            </div>
-
-            <div class="skill-list">
-
-                <span class="skill-badge">🔢 NumPy</span>
-
-                <span class="skill-badge">🖥️ Tkinter</span>
-
-                <span class="skill-badge">🖼️ OpenCV</span>
-
-                <span class="skill-badge">🤖 CNN</span>
-
-                <span class="skill-badge">🧠 Machine Learning</span>
-
-                <span class="skill-badge">🔐 Image Processing</span>
-
-            </div>
-
-        </div>
-
-        <!-- TOOLS -->
-
-        <div class="skill-category">
-
-            <div class="category-title">
-
-                <span class="category-icon">🛠️</span>
-
-                Tools & Version Control
-
-            </div>
-
-            <div class="skill-list">
-
-                <span class="skill-badge">🔧 Git</span>
-
-                <span class="skill-badge">🐙 GitHub</span>
-
-                <span class="skill-badge">💻 VS Code</span>
-
-                <span class="skill-badge">📓 Jupyter Notebook</span>
-
-                <span class="skill-badge">☁️ Google Colab</span>
-
-                <span class="skill-badge">🗃️ XAMPP</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 </body>
 
 </html>
-
